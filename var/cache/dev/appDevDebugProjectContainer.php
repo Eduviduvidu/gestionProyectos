@@ -16,6 +16,6 @@ if (!\class_exists(appDevDebugProjectContainer::class, false)) {
 
 return new \ContainerLirxuwb\appDevDebugProjectContainer(array(
     'container.build_hash' => 'Lirxuwb',
-    'container.build_id' => '6d2433f6',
-    'container.build_time' => 1519916450,
+    'container.build_id' => 'c73fa31d',
+    'container.build_time' => 1519920134,
 ));
