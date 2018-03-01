@@ -1,0 +1,71 @@
+<?php
+
+namespace gestionProyectos\mainBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Subtarea
+ *
+ * @ORM\Table(name="subtarea", indexes={@ORM\Index(name="FK_subtarea_tarea", columns={"id_tarea"})})
+ * @ORM\Entity
+ */
+class Subtarea
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=80, nullable=false)
+     */
+    private $nombre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="contenido", type="text", length=65535, nullable=false)
+     */
+    private $contenido;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fechaInicio", type="date", nullable=false)
+     */
+    private $fechainicio;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="fechaFinal", type="date", nullable=false)
+     */
+    private $fechafinal;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="status", type="integer", nullable=false)
+     */
+    private $status;
+
+    /**
+     * @var \Tarea
+     *
+     * @ORM\ManyToOne(targetEntity="Tarea")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_tarea", referencedColumnName="id")
+     * })
+     */
+    private $idTarea;
+
+
+}
+

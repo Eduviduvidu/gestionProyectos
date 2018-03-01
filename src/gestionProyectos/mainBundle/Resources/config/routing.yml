@@ -1,0 +1,3 @@
+gestion_proyectosmain_homepage:
+    path:     /
+    defaults: { _controller: gestionProyectosmainBundle:Default:index }
