@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Tarea
  *
- * @ORM\Table(name="tarea")
+ * @ORM\Table(name="tarea", indexes={@ORM\Index(name="FK_tarea_usuario_id", columns={"id_creador"})})
  * @ORM\Entity
  */
 class Tarea
@@ -55,6 +55,16 @@ class Tarea
      * @ORM\Column(name="status", type="integer", nullable=false)
      */
     private $status;
+
+    /**
+     * @var \Usuario
+     *
+     * @ORM\ManyToOne(targetEntity="Usuario")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_creador", referencedColumnName="id")
+     * })
+     */
+    private $idCreador;
 
 
 
@@ -186,5 +196,29 @@ class Tarea
     public function getStatus()
     {
         return $this->status;
+    }
+
+    /**
+     * Set idCreador
+     *
+     * @param \gestionProyectos\mainBundle\Entity\Usuario $idCreador
+     *
+     * @return Tarea
+     */
+    public function setIdCreador(\gestionProyectos\mainBundle\Entity\Usuario $idCreador = null)
+    {
+        $this->idCreador = $idCreador;
+
+        return $this;
+    }
+
+    /**
+     * Get idCreador
+     *
+     * @return \gestionProyectos\mainBundle\Entity\Usuario
+     */
+    public function getIdCreador()
+    {
+        return $this->idCreador;
     }
 }

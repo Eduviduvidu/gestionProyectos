@@ -1,3 +1,11 @@
 gestion_proyectosmain_homepage:
     path:     /
     defaults: { _controller: gestionProyectosmainBundle:Default:index }
+    
+gestion_proyectosmain_create_user:
+    path:     /formUsuario
+    defaults: { _controller: gestionProyectosmainBundle:FormUsuario:createUsuario }
+    
+gestion_proyectosmain_create_tarea:
+    path:     /formTarea
+    defaults: { _controller: gestionProyectosmainBundle:FormTarea:createTarea}

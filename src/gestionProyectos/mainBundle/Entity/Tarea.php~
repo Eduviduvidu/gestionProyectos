@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Tarea
  *
- * @ORM\Table(name="tarea")
+ * @ORM\Table(name="tarea", indexes={@ORM\Index(name="FK_tarea_usuario_id", columns={"id_creador"})})
  * @ORM\Entity
  */
 class Tarea
@@ -55,6 +55,16 @@ class Tarea
      * @ORM\Column(name="status", type="integer", nullable=false)
      */
     private $status;
+
+    /**
+     * @var \Usuario
+     *
+     * @ORM\ManyToOne(targetEntity="Usuario")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_creador", referencedColumnName="id")
+     * })
+     */
+    private $idCreador;
 
 
 }
