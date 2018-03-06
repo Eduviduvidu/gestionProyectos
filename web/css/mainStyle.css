@@ -3,7 +3,17 @@ body{
 }
 nav{
     box-shadow: 0px 0px 10px black;
+    /*margin-bottom: 20px;*/
 }
+.inicio{
+    background-color: #213440;
+    height:300px;
+}
+/* -navbar- */
+.navbar-right .nav-item{
+    margin-left: 10px;
+}
+
 footer{
     background-color: #343a40;
     color:white;

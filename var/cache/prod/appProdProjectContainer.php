@@ -16,6 +16,6 @@ if (!\class_exists(appProdProjectContainer::class, false)) {
 
 return new \Container5bafjxo\appProdProjectContainer(array(
     'container.build_hash' => '5bafjxo',
-    'container.build_id' => 'f079a47d',
-    'container.build_time' => 1520351901,
+    'container.build_id' => '87e1959e',
+    'container.build_time' => 1520362991,
 ));

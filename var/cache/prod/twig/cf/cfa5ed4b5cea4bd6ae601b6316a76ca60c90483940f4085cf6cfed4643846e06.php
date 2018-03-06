@@ -39,20 +39,20 @@ class __TwigTemplate_a239e07218742de18847ac53ea2b0ac054e58a7f5715110d310e86d1447
         // line 16
         $this->loadTemplate("navbar.html", "gestionProyectosmainBundle:Default:index.html.twig", 16)->display($context);
         // line 17
-        echo "        <div class=\"container-fluid\">
+        echo "        <div class=\"container-fluid inicio\">
             ";
         // line 18
         $this->displayBlock('content_block', $context, $blocks);
-        // line 21
+        // line 27
         echo "        </div>
         ";
-        // line 22
-        $this->loadTemplate("footer.html", "gestionProyectosmainBundle:Default:index.html.twig", 22)->display($context);
-        // line 23
+        // line 28
+        $this->loadTemplate("footer.html", "gestionProyectosmainBundle:Default:index.html.twig", 28)->display($context);
+        // line 29
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 31
-        echo "        
+        // line 37
+        echo "
     </body>
 </html>";
     }
@@ -83,24 +83,30 @@ class __TwigTemplate_a239e07218742de18847ac53ea2b0ac054e58a7f5715110d310e86d1447
     public function block_content_block($context, array $blocks = array())
     {
         // line 19
-        echo "                <p>Hola, esto es un texto</p>
+        echo "                <div class=\"container-fluid\">
+                    <div class=\"container\">
+                        <div class=\"info\">
+                            <p>Hola</p>
+                        </div>
+                    </div>
+                </div>
             ";
     }
 
-    // line 23
+    // line 29
     public function block_javascripts($context, array $blocks = array())
     {
-        // line 24
+        // line 30
         echo "            <!--<script src=\"";
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/bootstrap.bundle.min.css"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>
             <script src=\"";
-        // line 25
+        // line 31
         echo twig_escape_filter($this->env, $this->env->getExtension('Symfony\Bridge\Twig\Extension\AssetExtension')->getAssetUrl("js/bootstrap.min.css"), "html", null, true);
         echo "\" type=\"text/javascript\"></script>-->
             <script src=\"https://code.jquery.com/jquery-3.2.1.slim.min.js\" integrity=\"sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN\" crossorigin=\"anonymous\"></script>
-        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js\" integrity=\"sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh\" crossorigin=\"anonymous\"></script>
-        <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js\" integrity=\"sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ\" crossorigin=\"anonymous\"></script>
+            <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js\" integrity=\"sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh\" crossorigin=\"anonymous\"></script>
+            <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js\" integrity=\"sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ\" crossorigin=\"anonymous\"></script>
 
         ";
     }
@@ -117,7 +123,7 @@ class __TwigTemplate_a239e07218742de18847ac53ea2b0ac054e58a7f5715110d310e86d1447
 
     public function getDebugInfo()
     {
-        return array (  99 => 25,  94 => 24,  91 => 23,  86 => 19,  83 => 18,  77 => 11,  73 => 10,  69 => 9,  64 => 8,  61 => 7,  55 => 31,  52 => 23,  50 => 22,  47 => 21,  45 => 18,  42 => 17,  40 => 16,  35 => 13,  33 => 7,  27 => 4,  22 => 1,);
+        return array (  105 => 31,  100 => 30,  97 => 29,  86 => 19,  83 => 18,  77 => 11,  73 => 10,  69 => 9,  64 => 8,  61 => 7,  55 => 37,  52 => 29,  50 => 28,  47 => 27,  45 => 18,  42 => 17,  40 => 16,  35 => 13,  33 => 7,  27 => 4,  22 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
