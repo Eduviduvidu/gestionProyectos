@@ -3,7 +3,7 @@ gestion_proyectosmain_homepage:
     defaults: { _controller: gestionProyectosmainBundle:Default:index }
     
 gestion_proyectosmain_create_user:
-    path:     /formUsuario
+    path:     /registrarUsuario
     defaults: { _controller: gestionProyectosmainBundle:FormUsuario:createUsuario }
     
 gestion_proyectosmain_create_tarea:
