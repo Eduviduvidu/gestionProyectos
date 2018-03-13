@@ -3,9 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/gestionProyectos/web/css/mainStyle.css</file>
-            <file>file:/C:/xampp/htdocs/gestionProyectos/src/gestionProyectos/mainBundle/Resources/views/Default/index.html.twig</file>
-            <file>file:/C:/xampp/htdocs/gestionProyectos/app/Resources/views/navbar.html</file>
+            <file>file:/C:/xampp/htdocs/gestionProyectos/src/gestionProyectos/mainBundle/Form/UsuarioType.php</file>
+            <file>file:/C:/xampp/htdocs/gestionProyectos/src/gestionProyectos/mainBundle/Controller/FormRegistroUsuarioController.php</file>
+            <file>file:/C:/xampp/htdocs/gestionProyectos/src/gestionProyectos/mainBundle/Resources/views/Form/registrarUsuario.html.twig</file>
         </group>
     </open-files>
 </project-private>

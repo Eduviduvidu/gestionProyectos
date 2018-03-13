@@ -1,6 +1,6 @@
 <?php
 
-/* gestionProyectosmainBundle:Default:index.html.twig */
+/* @gestionProyectosmainBundle/Resources/views/Default/index.html.twig */
 class __TwigTemplate_a239e07218742de18847ac53ea2b0ac054e58a7f5715110d310e86d1447bd635 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -37,7 +37,7 @@ class __TwigTemplate_a239e07218742de18847ac53ea2b0ac054e58a7f5715110d310e86d1447
     <body>
         ";
         // line 16
-        $this->loadTemplate("navbar.html", "gestionProyectosmainBundle:Default:index.html.twig", 16)->display($context);
+        $this->loadTemplate("navbar.html", "@gestionProyectosmainBundle/Resources/views/Default/index.html.twig", 16)->display($context);
         // line 17
         echo "        <div class=\"container-fluid inicio\">
             ";
@@ -47,7 +47,7 @@ class __TwigTemplate_a239e07218742de18847ac53ea2b0ac054e58a7f5715110d310e86d1447
         echo "        </div>
         ";
         // line 28
-        $this->loadTemplate("footer.html", "gestionProyectosmainBundle:Default:index.html.twig", 28)->display($context);
+        $this->loadTemplate("footer.html", "@gestionProyectosmainBundle/Resources/views/Default/index.html.twig", 28)->display($context);
         // line 29
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
@@ -113,7 +113,7 @@ class __TwigTemplate_a239e07218742de18847ac53ea2b0ac054e58a7f5715110d310e86d1447
 
     public function getTemplateName()
     {
-        return "gestionProyectosmainBundle:Default:index.html.twig";
+        return "@gestionProyectosmainBundle/Resources/views/Default/index.html.twig";
     }
 
     public function isTraitable()
@@ -136,6 +136,6 @@ class __TwigTemplate_a239e07218742de18847ac53ea2b0ac054e58a7f5715110d310e86d1447
 
     public function getSourceContext()
     {
-        return new Twig_Source("", "gestionProyectosmainBundle:Default:index.html.twig", "C:\\xampp\\htdocs\\gestionProyectos\\src\\gestionProyectos\\mainBundle/Resources/views/Default/index.html.twig");
+        return new Twig_Source("", "@gestionProyectosmainBundle/Resources/views/Default/index.html.twig", "C:\\xampp\\htdocs\\gestionProyectos\\src\\gestionProyectos\\mainBundle/Resources/views/Default/index.html.twig");
     }
 }

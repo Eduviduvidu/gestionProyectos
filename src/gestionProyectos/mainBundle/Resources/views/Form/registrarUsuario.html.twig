@@ -1,0 +1,13 @@
+{% extends '@gestionProyectosmainBundle/Resources/views/Default/index.html.twig' %}
+
+{% block content_block %}
+    <div class="form">
+        {{form_start(form, {'action':'', 'method':'POST'})}} {{form_end(form)}}
+    </div>
+    <div class="form-err">
+        {% if status %}
+            <p>{{status}}</p>
+            <p>{{data['nom']}}</p>
+        {% endif %}
+    </div>
+{% endblock %}
