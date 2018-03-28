@@ -17,9 +17,9 @@ class LoginUsuarioType extends AbstractType {
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options) {
-        $builder->add('Nickname', TextType::class)->
-        add('Password', PasswordType::class)->
-        add('Enviar', SubmitType::class);
+        $builder->add('Nombre', TextType::class, array('attr' => array('class' => 'form-control col-md-12')))->
+        add('Password', PasswordType::class, array('label'=>'Contraseña','attr' => array('class' => 'form-control col-md-12')))->
+        add('Login', SubmitType::class, array('attr' => array('class' => 'btn btn-primary col-md-12')));
     }
 
     /**

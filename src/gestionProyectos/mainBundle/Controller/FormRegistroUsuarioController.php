@@ -9,26 +9,37 @@ use Symfony\Component\HttpFoundation\Request;
 
 class FormRegistroUsuarioController extends Controller {
 
-    public function createUsuarioAction(Request $request) {
+    public function formCreateUsuarioAction(Request $request, $data = null) {
         $usuario = new Usuario();
         $form = $this->createForm(RegistroUsuarioType::class, $usuario);
 
 
         $form->handleRequest($request);
         if ($form->isValid()) {
-            $status = "Formulari vàlid";
-//enviem les dades a la vista per visualitzar-les
+            $status = "Formulario válido";
             $data = array(
-                'nom' => $form->get('Nombre')->getData(),
+                'nombre' => $form->get('Nombre')->getData(),
                 'nickname' => $form->get('Nickname')->getData(),
                 'password' => $form->get('Password')->getData()
             );
+            $usuario->setNombre($form->get('Nombre')->getData());
+            $usuario->setNickname($form->get('Nickname')->getData());
+            $usuario->setPassword($form->get('Password')->getData());
+            
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($usuario);
+            $flush = $em->flush();
+            if ($flush != null) {
+                $status = "Usuario creado";
+            } else {
+                $status = "Usuario no creado";
+            }
         } else {
             $status = null;
             $data = null;
         }
 
-        return $this->render('gestionProyectosmainBundle:Form:registrarUsuario.html.twig', array('title' => 'Crear usuario', 'form' => $form->createView(), 'status'=>$status, 'data'=>$data));
+        return $this->render('gestionProyectosmainBundle:Form:registrarUsuario.html.twig', array('title' => 'Registrarse', 'form' => $form->createView(), 'status' => $status, 'data' => $data));
     }
 
 }

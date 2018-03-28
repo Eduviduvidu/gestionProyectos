@@ -1,15 +1,43 @@
+# PAGINAS
 gestion_proyectosmain_homepage:
     path:     /
     defaults: { _controller: gestionProyectosmainBundle:Default:index }
-    
+
+# Usuarios
 gestion_proyectosmain_create_user:
     path:     /registrarUsuario
-    defaults: { _controller: gestionProyectosmainBundle:FormRegistroUsuario:createUsuario }
+    defaults: { _controller: gestionProyectosmainBundle:FormRegistroUsuario:formCreateUsuario }
     
 gestion_proyectosmain_login_user:
     path:     /loginUsuario
     defaults: { _controller: gestionProyectosmainBundle:FormLoginUsuario:loginUsuario }
-    
+  
+gestion_proyectosmain_logout_user:
+    path:     /logout
+    defaults: { _controller: gestionProyectosmainBundle:Logout:logout}
+        
+        
+# Tareas
 gestion_proyectosmain_create_tarea:
-    path:     /formTarea
-    defaults: { _controller: gestionProyectosmainBundle:FormTarea:createTarea}
+    path:     /crearTarea
+    defaults: { _controller: gestionProyectosmainBundle:Tareas:createTarea}
+    
+gestion_proyectosmain_lista_tareas:
+    path:     /tareas
+    defaults: { _controller: gestionProyectosmainBundle:Tareas:listaTareas}
+
+gestion_proyectosmain_single_tarea:
+    path:     /tarea/{id}
+    defaults: { _controller: gestionProyectosmainBundle:Tareas:mostrarTarea}
+    
+gestion_proyectosmain_borrar_tarea:
+    path:     /borrarTarea/{id}
+    defaults: { _controller: gestionProyectosmainBundle:Tareas:borrarTarea}
+    
+gestion_proyectosmain_upgrade_tarea:
+    path:     /upgradeTarea/{id}
+    defaults: { _controller: gestionProyectosmainBundle:Tareas:subirEstadoTarea}
+    
+gestion_proyectosmain_downgrade_tarea:
+    path:     /downgradeTarea/{id}
+    defaults: { _controller: gestionProyectosmainBundle:Tareas:bajarEstadoTarea}

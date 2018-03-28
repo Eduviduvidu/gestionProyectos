@@ -2,12 +2,12 @@
 
 {% block content_block %}
     <div class="form">
+        {% if status %}
+            <span class="err-msg">{{status}}</span>
+        {% endif %}
         {{form_start(form, {'action':'', 'method':'POST'})}} {{form_end(form)}}
     </div>
     <div class="form-err">
-        {% if status %}
-            <p>{{status}}</p>
-            <p>{{data['nom']}}</p>
-        {% endif %}
+
     </div>
 {% endblock %}

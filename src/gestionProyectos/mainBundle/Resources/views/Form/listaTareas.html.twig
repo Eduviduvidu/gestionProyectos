@@ -1,7 +1,96 @@
 {% extends '@gestionProyectosmainBundle/Resources/views/Default/index.html.twig' %}
 
 {% block content_block %}
-    <div class="form">
-        {{form_start(form, {'action':'', 'method':'POST'})}} {{form_end(form)}}
+    <div class="main-tareas container-fluid">
+        <!--<div id="menu-tareas">
+            <a class="btn btn-success" href="{{ path('gestion_proyectosmain_create_tarea')}}">Crear</a>
+        </div>-->
+        <div class="row">
+            {# Iniciadas #}
+
+            <div class="lista-tareas  col-lg-3">
+                <div class="lista-tareas-title">Iniciadas</div>
+                <div class="tareas">
+                    {%if iniciadas|length > 0%}
+                        {%for tarea in iniciadas%}
+                            <div class="tarea">
+                                <div class="tarea-info">
+                                    <p>{{tarea.getNombre}}</p>
+                                    <p>{{tarea.getDescripcion}}</p>
+                                </div>
+                                <div class="tarea-buttons">
+                                    <a class="btn btn-primary left-btn" hidden><i class="fas fa-angle-double-left"></i></a>
+                                    <div class="center-btns">
+                                        <a class="btn btn-danger" href="{{path('gestion_proyectosmain_borrar_tarea', {"id":tarea.getId})}}">Borrar</a>
+                                        <a class="btn btn-primary" href="">Editar</a>
+                                    </div>
+                                    <a class="btn btn-primary right-btn round" href="{{path('gestion_proyectosmain_upgrade_tarea', {"id":tarea.getId})}}"><i class="fas fa-angle-double-right"></i></a>
+                                </div>
+                            </div>
+                        {%endfor%}
+
+                    {%else%}
+                        <div class="no-tareas">
+                            <p>No hay tareas</p>
+                        </div>
+                    {%endif%}
+                </div>
+                <a id="crear-tarea-btn" class="btn btn-success col-sm-12" href="{{ path('gestion_proyectosmain_create_tarea')}}"><i class="fas fa-plus"></i></a>
+            </div>
+            {# En proceso #}
+            <div class="lista-tareas col-lg-3">
+                <div class="lista-tareas-title">En proceso</div>
+                {%if proceso|length > 0%}
+
+                    {%for tarea in proceso%}
+                        <div class="tarea">
+                            <div class="tarea-info">
+                                <p>{{tarea.getNombre}}</p>
+                                <p>{{tarea.getDescripcion|slice(0, 55) ~ '...' }}</p>
+                            </div>
+                            <div class="tarea-buttons">
+                                <a class="btn btn-primary left-btn round"  href="{{ path('gestion_proyectosmain_downgrade_tarea', {"id":tarea.getId})}}"><i class="fas fa-angle-double-left"></i></a>
+                                <div class="center-btns">
+                                    <a class="btn btn-danger" href="{{path('gestion_proyectosmain_borrar_tarea', {"id":tarea.getId})}}">Borrar</a>
+                                    <a class="btn btn-primary" href="">Editar</a>
+                                </div>
+                                <a class="btn btn-primary right-btn round" href="{{path('gestion_proyectosmain_upgrade_tarea', {"id":tarea.getId})}}"><i class="fas fa-angle-double-right"></i></a>
+                            </div>
+                        </div>
+                    {%endfor%}
+                {%else%}
+                    <div class="no-tareas">
+                        <p>No hay tareas</p>
+                    </div>
+                {%endif%}
+            </div>
+
+            {# Iniciadas #}
+            <div class="lista-tareas col-lg-3">
+                <div class="lista-tareas-title">Hechas</div>
+                {%if hechas|length > 0%}
+                    {%for tarea in hechas%}
+                        <div class="tarea">
+                            <div class="tarea-info">
+                                <p>{{tarea.getNombre}}</p>
+                                <p>{{tarea.getDescripcion}}</p>
+                            </div>
+                            <div class="tarea-buttons">
+                                <a class="btn btn-primary left-btn round" href="{{ path('gestion_proyectosmain_downgrade_tarea', {"id":tarea.getId})}}"><i class="fas fa-angle-double-left"></i></a>
+                                <div class="center-btns">
+                                    <a class="btn btn-danger" href="{{path('gestion_proyectosmain_borrar_tarea', {"id":tarea.getId})}}">Borrar</a>
+                                    <a class="btn btn-primary" href="">Editar</a>
+                                </div>
+                                <a class="btn btn-primary right-btn" href="" hidden><i class="fas fa-angle-double-right"></i></a>
+                            </div>
+                        </div>
+                    {%endfor%}
+                {%else%}
+                    <div class="no-tareas">
+                        <p>No hay tareas</p>
+                    </div>
+                {%endif%}
+            </div>
+        </div>
     </div>
 {% endblock %}

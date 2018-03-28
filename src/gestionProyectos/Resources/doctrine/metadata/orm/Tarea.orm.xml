@@ -17,8 +17,8 @@
         <option name="fixed"/>
       </options>
     </field>
-    <field name="fechainicio" type="date" column="fechaInicio" nullable="false"/>
-    <field name="fechafinal" type="date" column="fechaFinal" nullable="false"/>
+    <field name="fechainicio" type="date" column="fechaInicio" nullable="true"/>
+    <field name="fechafinal" type="date" column="fechaFinal" nullable="true"/>
     <field name="status" type="integer" column="status" nullable="false">
       <options>
         <option name="unsigned"/>

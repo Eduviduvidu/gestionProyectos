@@ -22,14 +22,14 @@ class Asignacion
     private $id;
 
     /**
-     * @var \Subtarea
+     * @var \Tarea
      *
-     * @ORM\ManyToOne(targetEntity="Subtarea")
+     * @ORM\ManyToOne(targetEntity="Tarea")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_subtarea", referencedColumnName="id")
+     *   @ORM\JoinColumn(name="id_tarea", referencedColumnName="id")
      * })
      */
-    private $idSubtarea;
+    private $idTarea;
 
     /**
      * @var \Usuario
@@ -54,27 +54,27 @@ class Asignacion
     }
 
     /**
-     * Set idSubtarea
+     * Set idTarea
      *
-     * @param \gestionProyectos\mainBundle\Entity\Subtarea $idSubtarea
+     * @param \gestionProyectos\mainBundle\Entity\Tarea $idTarea
      *
      * @return Asignacion
      */
-    public function setIdSubtarea(\gestionProyectos\mainBundle\Entity\Subtarea $idSubtarea = null)
+    public function setIdTarea(\gestionProyectos\mainBundle\Entity\Tarea $idTarea = null)
     {
-        $this->idSubtarea = $idSubtarea;
+        $this->idTarea = $idTarea;
 
         return $this;
     }
 
     /**
-     * Get idSubtarea
+     * Get idTarea
      *
-     * @return \gestionProyectos\mainBundle\Entity\Subtarea
+     * @return \gestionProyectos\mainBundle\Entity\Tarea
      */
-    public function getIdSubtarea()
+    public function getIdTarea()
     {
-        return $this->idSubtarea;
+        return $this->idTarea;
     }
 
     /**

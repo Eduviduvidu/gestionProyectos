@@ -9,23 +9,39 @@
             <link href="{{asset('css/bootstrap-grid.min.css')}}" rel="stylesheet" type="text/css">
             <link href="{{asset('css/bootstrap-reboot.min.css')}}" rel="stylesheet" type="text/css">
             <link href="{{asset('css/mainStyle.css')}}" rel="stylesheet" type="text/css">
+            <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700" rel="stylesheet"> 
         {% endblock stylesheets %}
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
     </head>
 
     <body>
-        {% include 'navbar.html'%}
-        <div class="container-fluid inicio">
+        {% if usuario is defined %}
+            {% if usuario is not null %}
+                {% include '@gestionProyectosmainBundle/Resources/views/Default/logged_navbar.html'%}
+            {%else%}
+                {% include '@gestionProyectosmainBundle/Resources/views/Default/navbar.html'%}
+            {%endif%}
+        {%else%}
+            {% include '@gestionProyectosmainBundle/Resources/views/Default/navbar.html'%}
+        {%endif%}
+
+        <div class="container-fluid main">
             {% block content_block %}
                 <div class="container-fluid">
                     <div class="container">
                         <div class="info">
-                            <p>Hola</p>
+                            {% if  usuario is not empty %}
+                                <p>Hola, {{usuario.getNickname}}</p>
+                            {% else %}
+                                <p>Hola</p>
+                            {% endif %}
+
                         </div>
                     </div>
                 </div>
             {% endblock %}
         </div>
-        {% include 'footer.html'%}
+        {% include '@gestionProyectosmainBundle/Resources/views/Default/footer.html'%}
         {% block javascripts %}
             <!--<script src="{{asset('js/bootstrap.bundle.min.css')}}" type="text/javascript"></script>
             <script src="{{asset('js/bootstrap.min.css')}}" type="text/javascript"></script>-->
